@@ -2,7 +2,7 @@
 // İKON KLİMA VE ISI SİSTEMLERİ - INTERACTIVITY & ANIMATIONS
 // =========================================================================
 
-import './style.css';
+// Note: style.css is linked in index.html
 
 document.addEventListener('DOMContentLoaded', () => {
     
