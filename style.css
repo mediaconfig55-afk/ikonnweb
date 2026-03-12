@@ -1169,11 +1169,11 @@ section {
 
   .hero {
       align-items: flex-start;
-      padding-top: 140px; /* Stronger padding for navbar clearance */
+      padding-top: 180px; /* Increased padding for even more navbar clearance */
   }
 
   .hero-content {
-      margin-top: 2rem; /* Reduced because hero padding handles it now */
+      margin-top: 3rem; /* Slightly more margin to push content further down */
   }
 
   .navbar .nav-links a {
