@@ -1208,7 +1208,12 @@ section {
   
   .footer-grid { grid-template-columns: 1fr; }
   
-  .back-to-top { right: 5rem; width: 40px; height: 40px; }
+  .back-to-top { 
+    right: 2rem; 
+    bottom: 7rem; 
+    width: 44px; 
+    height: 44px; 
+  }
 
   /* Mobile Logo Visibility Fix */
   .logo-text, .logo-icon {
