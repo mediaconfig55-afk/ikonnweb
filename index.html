@@ -421,7 +421,114 @@
         <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
     </a>
 
-    <!-- Application Logic -->
-    <script type="module" src="./main.js"></script>
+    <!-- Application Logic (Inlined for maximum compatibility) -->
+    <script>
+        console.log("İKON KLİMA: Sistem başlatılıyor...");
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log("İKON KLİMA: DOM yüklendi.");
+            
+            // --- 1. Navbar Scroll Effect ---
+            const navbar = document.getElementById('navbar');
+            const backToTop = document.getElementById('backToTop');
+            
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+                
+                if (window.scrollY > 500) {
+                    backToTop.classList.add('visible');
+                } else {
+                    backToTop.classList.remove('visible');
+                }
+            });
+
+            // --- 2. Mobile Hamburger Menu ---
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+            const navItems = document.querySelectorAll('.nav-links a');
+
+            if (hamburger && navLinks) {
+                console.log("İKON KLİMA: Hamburger menü hazır.");
+                
+                const toggleMenu = (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    console.log("İKON KLİMA: Menü tetiklendi.");
+                    hamburger.classList.toggle('active');
+                    navLinks.classList.toggle('active');
+                    
+                    const isActive = navLinks.classList.contains('active');
+                    document.body.style.overflow = isActive ? 'hidden' : 'initial';
+                };
+
+                hamburger.addEventListener('click', toggleMenu);
+                // Also add touchstart for faster response on mobile
+                hamburger.addEventListener('touchstart', toggleMenu, { passive: false });
+            } else {
+                console.error("İKON KLİMA: Kritik Hata - Hamburger veya NavLinks bulunamadı!");
+            }
+
+            // Close mobile menu when a link is clicked
+            navItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    if (hamburger && navLinks) {
+                        hamburger.classList.remove('active');
+                        navLinks.classList.remove('active');
+                        document.body.style.overflow = 'initial';
+                    }
+                });
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (navLinks && navLinks.classList.contains('active')) {
+                    if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
+                        hamburger.classList.remove('active');
+                        navLinks.classList.remove('active');
+                        document.body.style.overflow = 'initial';
+                    }
+                }
+            });
+
+            // --- 3. Scroll Animations ---
+            const fadeElements = document.querySelectorAll('.advantage-card, .product-card, .section-header, .about-content, .about-image-wrapper');
+            fadeElements.forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+            });
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.15 });
+
+            fadeElements.forEach(el => observer.observe(el));
+
+            // --- 4. Smooth Scrolling ---
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if(targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if(targetElement) {
+                        const navHeight = navbar.offsetHeight;
+                        const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY - navHeight;
+                        window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
