@@ -1167,8 +1167,13 @@ section {
     transform: translateY(-5px);
   }
 
+  .hero {
+      align-items: flex-start;
+      padding-top: 140px; /* Stronger padding for navbar clearance */
+  }
+
   .hero-content {
-      margin-top: 12rem; /* Even more space for mobile */
+      margin-top: 2rem; /* Reduced because hero padding handles it now */
   }
 
   .navbar .nav-links a {
