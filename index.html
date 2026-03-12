@@ -45,6 +45,13 @@
                     <li><a href="#products">Ürünler</a></li>
                     <li><a href="#advantages">Avantajlarımız</a></li>
                     <li><a href="#contact">İletişim</a></li>
+                    <li class="mobile-socials">
+                        <div class="divider"></div>
+                        <div class="social-icons">
+                            <a href="https://www.instagram.com/lkonklima/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="https://wa.me/905442946570" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                        </div>
+                    </li>
                 </ul>
             </nav>
             <div class="nav-action">
@@ -158,7 +165,7 @@
                     <!-- Product 1 -->
                     <article class="product-card">
                         <figure class="product-image">
-                            <div class="img-placeholder" id="img-hpro"></div>
+                            <img src="./assets/img/hpro.png" alt="Hantech H-Pro Wall Mounted Air Conditioner" class="product-img">
                             <figcaption class="product-badge">Duvar Tipi</figcaption>
                         </figure>
                         <div class="product-info">
@@ -172,7 +179,7 @@
                     <!-- Product 2 -->
                     <article class="product-card">
                         <figure class="product-image">
-                            <div class="img-placeholder" id="img-waterpump"></div>
+                            <img src="./assets/img/heatpump.png" alt="Hantech Monoblock Heat Pump System" class="product-img">
                             <figcaption class="product-badge" style="color:var(--secondary)">Isı Pompası</figcaption>
                         </figure>
                         <div class="product-info">
@@ -186,7 +193,7 @@
                     <!-- Product 3 -->
                     <article class="product-card">
                         <figure class="product-image">
-                            <div class="img-placeholder" id="img-salon"></div>
+                            <img src="./assets/img/salon.png" alt="Hantech Salon Type Floor Standing Air Conditioner" class="product-img">
                             <figcaption class="product-badge">Salon Tipi</figcaption>
                         </figure>
                         <div class="product-info">
@@ -200,7 +207,7 @@
                     <!-- Product 4 -->
                     <article class="product-card">
                         <figure class="product-image">
-                            <div class="img-placeholder" id="img-eisturm"></div>
+                            <img src="./assets/img/eisturm.png" alt="Hantech Eisturm Tower Type Air Conditioner" class="product-img">
                             <figcaption class="product-badge text-warning">Kule Tipi</figcaption>
                         </figure>
                         <div class="product-info">
@@ -214,7 +221,7 @@
                     <!-- Product 5 -->
                     <article class="product-card">
                         <figure class="product-image">
-                            <div class="img-placeholder" id="img-kanal"></div>
+                            <img src="./assets/img/kanal.png" alt="Hantech Ducted Type Air Conditioner" class="product-img">
                             <figcaption class="product-badge">Kanal Tipi</figcaption>
                         </figure>
                         <div class="product-info">
@@ -228,7 +235,7 @@
                     <!-- Product 6 -->
                     <article class="product-card">
                         <figure class="product-image">
-                            <div class="img-placeholder" id="img-kanal"></div>
+                            <img src="./assets/img/kanal.png" alt="Hantech Ducted Type Air Conditioner" class="product-img">
                             <figcaption class="product-badge">Kanal Tipi</figcaption>
                         </figure>
                         <div class="product-info">
@@ -256,7 +263,7 @@
                     <!-- Product 8 -->
                     <article class="product-card">
                         <figure class="product-image">
-                            <div class="img-placeholder" id="img-kaset"></div>
+                            <img src="./assets/img/cassette.png" alt="Hantech Cassette Type Ceiling Air Conditioner" class="product-img">
                             <figcaption class="product-badge">Kaset Tipi</figcaption>
                         </figure>
                         <div class="product-info">
@@ -270,7 +277,7 @@
                     <!-- Product 9 -->
                     <article class="product-card">
                         <figure class="product-image">
-                            <div class="img-placeholder" id="img-kaset"></div>
+                            <img src="./assets/img/cassette.png" alt="Hantech Cassette Type Ceiling Air Conditioner" class="product-img">
                             <figcaption class="product-badge">Kaset Tipi</figcaption>
                         </figure>
                         <div class="product-info">
@@ -284,7 +291,7 @@
                     <!-- Product 10 -->
                     <article class="product-card">
                         <figure class="product-image">
-                            <div class="img-placeholder" id="img-kaset"></div>
+                            <img src="./assets/img/cassette.png" alt="Hantech Cassette Type Ceiling Air Conditioner" class="product-img">
                             <figcaption class="product-badge">Kaset Tipi</figcaption>
                         </figure>
                         <div class="product-info">
@@ -319,7 +326,7 @@
                     </div>
                     <figure class="about-image-wrapper">
                         <div class="glass-image-container">
-                           <div class="img-placeholder" id="img-about" role="img" aria-label="Profesyonel klima kurulumu ve enerji verimliliği konsepti"></div>
+                           <img src="./assets/img/hpro.png" alt="Professional AC Installation" class="about-img">
                            <figcaption class="floating-badge">
                                <i class="fa-solid fa-bolt text-warning"></i>
                                <span>Üstün A+++ Enerji</span>
@@ -446,36 +453,44 @@
                 }
             });
 
-            // --- 2. Mobile Hamburger Menu ---
+            // --- 2. Mobile Hamburger Menu (Premium Interaction) ---
             const hamburger = document.querySelector('.hamburger');
             const navLinks = document.querySelector('.nav-links');
-            const navItems = document.querySelectorAll('.nav-links a');
+            const navItems = document.querySelectorAll('.nav-links li'); // Target LI for staggered entry
 
             if (hamburger && navLinks) {
-                console.log("İKON KLİMA: Hamburger menü hazır.");
-                
                 const toggleMenu = (e) => {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    console.log("İKON KLİMA: Menü tetiklendi.");
+                    if (e) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                    }
+                    
+                    const isOpening = !navLinks.classList.contains('active');
                     hamburger.classList.toggle('active');
                     navLinks.classList.toggle('active');
                     
-                    const isActive = navLinks.classList.contains('active');
-                    document.body.style.overflow = isActive ? 'hidden' : 'initial';
+                    document.body.style.overflow = isOpening ? 'hidden' : 'initial';
+                    
+                    if (isOpening) {
+                        console.log("İKON KLİMA: Menü açıldı.");
+                    }
                 };
 
                 hamburger.addEventListener('click', toggleMenu);
-                // Also add touchstart for faster response on mobile
                 hamburger.addEventListener('touchstart', toggleMenu, { passive: false });
-            } else {
-                console.error("İKON KLİMA: Kritik Hata - Hamburger veya NavLinks bulunamadı!");
+
+                // Close on Escape key
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+                        toggleMenu();
+                    }
+                });
             }
 
             // Close mobile menu when a link is clicked
-            navItems.forEach(item => {
+            document.querySelectorAll('.nav-links a').forEach(item => {
                 item.addEventListener('click', () => {
-                    if (hamburger && navLinks) {
+                    if (hamburger && navLinks && navLinks.classList.contains('active')) {
                         hamburger.classList.remove('active');
                         navLinks.classList.remove('active');
                         document.body.style.overflow = 'initial';
