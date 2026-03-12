@@ -6,8 +6,8 @@
   /* Color Palette - Premium & Professional Theme */
   --primary: #0f172a; /* Deep slate / Navy */
   --primary-light: #1e293b; /* Slate */
-  --secondary: #3b82f6; /* Trust blue */
-  --accent: #eab308; /* Premium golden accent */
+  --secondary: #60a5fa; /* Braighter more modern blue */
+  --accent: #facc15; /* More vibrant golden accent */
   --whatsapp: #25D366;
   
   /* Background gradients */
@@ -160,6 +160,11 @@ img {
   border-radius: 50px;
 }
 
+/* Fix for mobile menu z-index and appearance */
+.hamburger {
+  z-index: 1002;
+}
+
 /* Glassmorphism & Cards */
 .glass-card {
   background: var(--surface);
@@ -250,6 +255,7 @@ img {
   padding: 1rem 0;
   z-index: 1000;
   transition: var(--transition);
+  background: transparent;
 }
 
 .navbar.scrolled {
@@ -1018,15 +1024,25 @@ section {
       top: 70px;
       gap: 0;
       flex-direction: column;
-      background-color: var(--surface);
+      background-color: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(15px);
       width: 100%;
+      height: calc(100vh - 70px);
+      justify-content: center;
       text-align: center;
-      transition: 0.3s;
+      transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       box-shadow: var(--shadow-md);
+      z-index: 1001;
+      visibility: hidden;
+      opacity: 0;
+      pointer-events: none;
   }
 
   .nav-links.active {
       left: 0;
+      visibility: visible;
+      opacity: 1;
+      pointer-events: auto;
   }
 
   .hero-content {
