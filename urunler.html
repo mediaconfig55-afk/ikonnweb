@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="İKON KLİMA - Hantech İklimlendirme Ürünleri Kataloğu. Duvar tipi, salon tipi, kaset tipi klimalar ve VRF sistemleri." />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:title" content="Ürünlerimiz | İKON KLİMA VE ISI SİSTEMLERİ" />
+    <meta property="og:description" content="İKON KLİMA - Hantech İklimlendirme Ürünleri Kataloğu. Duvar tipi, salon tipi, kaset tipi klimalar ve VRF sistemleri." />
+    <meta property="og:type" content="website" />
+    <title>Ürünlerimiz | İKON KLİMA VE ISI SİSTEMLERİ</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./products.js"></script>
+
+    <style>
+        .page-header {
+            padding: 120px 0 60px;
+            background: linear-gradient(135deg, rgba(23,37,84,0.95), rgba(30,58,138,0.9));
+            text-align: center;
+            color: #fff;
+        }
+        .page-header-title {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+        .page-header p {
+            font-size: 1.1rem;
+            opacity: 0.85;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        @media (max-width: 768px) {
+            .page-header-title { font-size: 1.8rem; }
+        }
+
+        .product-category-section { padding: 60px 0; }
+
+        .category-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #1e3a8a;
+            margin-bottom: 40px;
+            text-align: center;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        .category-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            border-radius: 2px;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background: rgba(255, 255, 255, 0.85);
+            border: 1px solid rgba(0,0,0,0.05);
+            border-radius: 24px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .product-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        .product-card img {
+            width: 100%;
+            max-width: 220px;
+            height: 200px;
+            object-fit: contain;
+            margin-bottom: 20px;
+        }
+        .product-card h3 {
+            font-size: 1.15rem;
+            color: #1e3a8a;
+            margin-bottom: 10px;
+            font-weight: 700;
+            min-height: 50px;
+            display: flex;
+            align-items: center;
+        }
+        .product-card p {
+            font-size: 0.9rem;
+            color: #64748b;
+            line-height: 1.5;
+            margin-bottom: 15px;
+            flex-grow: 1;
+        }
+        .product-badge {
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: #fff;
+            padding: 5px 14px;
+            border-radius: 20px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+        .product-card .btn {
+            width: 100%;
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header class="navbar" id="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <span class="logo-icon"><i class="fa-solid fa-snowflake"></i></span>
+                    <span class="logo-text">İKON <span class="highlight">KLİMA</span></span>
+                </a>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html#home">Anasayfa</a></li>
+                    <li><a href="index.html#about">Hakkımızda</a></li>
+                    <li class="dropdown">
+                        <a href="urunler.html" class="dropdown-toggle active">Ürünler <i class="fa-solid fa-chevron-down ms-1" style="font-size: 0.7em;"></i></a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-category">Duvar Tipi Klima</li>
+                            <li><a href="urun-detay.html?id=u-fresh-12000">Hantech U-Fresh 12.000 BTU</a></li>
+                            <li><a href="urun-detay.html?id=elegant-9000">Hantech Elegant 9.000 BTU</a></li>
+                            <li><a href="urun-detay.html?id=h-fresh-9000">Hantech H-Fresh 9.000 BTU</a></li>
+                            <li class="dropdown-category">Salon Tipi Klima</li>
+                            <li><a href="urun-detay.html?id=salon-48000">Hantech Salon Tipi 48.000 BTU</a></li>
+                            <li><a href="urun-detay.html?id=eisturm-24000">Hantech Eisturm 24.000 BTU</a></li>
+                            <li class="dropdown-category">Ticari Klimalar</li>
+                            <li><a href="urun-detay.html?id=kaset-18000">Hantech Kaset Tipi 18.000 BTU</a></li>
+                            <li><a href="urun-detay.html?id=kanal-18000">Hantech Kanal Tipi 18.000 BTU</a></li>
+                            <li><a href="urun-detay.html?id=yer-tavan-45kw">Hantech Yer & Tavan Tipi 4.5kW</a></li>
+                            <li class="dropdown-category">VRF Sistemleri</li>
+                            <li><a href="urun-detay.html?id=mini-vrf-8kw">Hantech Mini VRF 8kW Dış Ünite</a></li>
+                            <li><a href="urun-detay.html?id=v6-8hp">Hantech V6+ 8HP Dış Ünite</a></li>
+                            <li class="dropdown-category">Isı Pompası</li>
+                            <li><a href="urun-detay.html?id=isi-pompasi-190">Hantech Isı Pompası 190L</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="index.html#contact">İletişim</a></li>
+                    <li class="mobile-socials">
+                        <div class="divider"></div>
+                        <div class="social-icons">
+                            <a href="https://www.instagram.com/lkonklima/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="https://wa.me/905442946570" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+            <div class="nav-action">
+                <a href="https://wa.me/905442946570" target="_blank" class="btn btn-primary btn-sm rounded-pill"><i class="fa-brands fa-whatsapp"></i> Bize Ulaşın</a>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <h1 class="page-header-title">Hantech İklimlendirme Sistemleri</h1>
+                <p>Türkiye'nin öncü yüksek verimli ve çevre dostu klima ve ısı pompası serisi.</p>
+            </div>
+        </section>
+
+        <!-- Products are rendered dynamically from products.js -->
+        <div id="products-container"></div>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="footer-top">
+            <div class="container footer-grid">
+                <div class="footer-col brand-col">
+                    <div class="footer-logo">
+                        <span class="logo-icon"><i class="fa-solid fa-snowflake"></i></span>
+                        <span class="ms-2">İKON KLİMA</span>
+                    </div>
+                    <p>Yaşam ve çalışma alanlarınızın konforu için dizayn edilmiş üst düzey mühendislik çözümleri. Profesyonel satış, kurumsal proje yönetimi ve teknik servis.</p>
+                    <nav class="social-links mt-3" aria-label="Sosyal Medya Bağlantıları">
+                        <a href="https://www.instagram.com/lkonklima/" target="_blank" class="social-icon" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://wa.me/905442946570" target="_blank" class="social-icon" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                    </nav>
+                </div>
+                <nav class="footer-col links-col" aria-label="Hızlı Linkler">
+                    <h3>Kurumsal Menü</h3>
+                    <ul>
+                        <li><a href="index.html#home">Anasayfa</a></li>
+                        <li><a href="index.html#about">Kurumsal Profil</a></li>
+                        <li><a href="urunler.html">İklimlendirme Çözümleri</a></li>
+                        <li><a href="index.html#advantages">Ayrıcalıklarımız</a></li>
+                    </ul>
+                </nav>
+                <address class="footer-col contact-col">
+                    <h3>İletişim Bilgileri</h3>
+                    <ul class="contact-info">
+                        <li>
+                            <i class="fa-solid fa-location-dot"></i>
+                            <address style="font-style: normal;">
+                                <span>Genel Merkez</span>
+                                Mevlana Mah. Bornova Cad. No: 151<br>Atakum / Samsun
+                            </address>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-user-tie"></i>
+                            <div><span>Yetkili Kişi</span> Mesut Kozan</div>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-phone"></i>
+                            <div>
+                                <span>Kurumsal Hat / WhatsApp</span>
+                                <a href="tel:+905442946570">+90 544 294 65 70</a><br>
+                                <a href="tel:+905325954566">+90 532 595 45 66</a>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fa-brands fa-instagram"></i>
+                            <div><span>Instagram</span> <a href="https://www.instagram.com/lkonklima/" target="_blank">@lkonklima</a></div>
+                        </li>
+                    </ul>
+                </address>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container text-center">
+                <p>&copy; 2026 İKON KLİMA VE ISI SİSTEMLERİ. Tüm Hakları Saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Fixed WhatsApp Button -->
+    <a href="https://wa.me/905442946570" target="_blank" class="floating-whatsapp" aria-label="WhatsApp ile hemen iletişime geçin">
+        <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+    </a>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Navbar
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                navbar.classList.toggle('scrolled', window.scrollY > 50);
+            });
+
+            // Mobile menu
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+            if (hamburger && navLinks) {
+                hamburger.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    hamburger.classList.toggle('active');
+                    navLinks.classList.toggle('active');
+                    document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+                });
+                hamburger.addEventListener('touchstart', (e) => {
+                    e.preventDefault();
+                    hamburger.classList.toggle('active');
+                    navLinks.classList.toggle('active');
+                    document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+                }, { passive: false });
+                // Dropdown Menu Toggle for Mobile
+                document.querySelectorAll('.dropdown-toggle').forEach(drop => {
+                    drop.addEventListener('click', function(e) {
+                        if (window.innerWidth <= 992) {
+                            e.preventDefault();
+                            this.parentElement.classList.toggle('active');
+                        }
+                    });
+                });
+
+                document.querySelectorAll('.nav-links a:not(.dropdown-toggle)').forEach(a => {
+                    a.addEventListener('click', () => {
+                        hamburger.classList.remove('active');
+                        navLinks.classList.remove('active');
+                        document.body.style.overflow = '';
+                    });
+                });
+            }
+
+            // Dynamically render products grouped by category
+            if (typeof hantechProducts === 'undefined') return;
+
+            const container = document.getElementById('products-container');
+            const categories = {};
+
+            hantechProducts.forEach(p => {
+                if (!categories[p.category]) categories[p.category] = [];
+                categories[p.category].push(p);
+            });
+
+            let isLight = true;
+            for (const [catName, products] of Object.entries(categories)) {
+                const section = document.createElement('section');
+                section.className = 'product-category-section' + (isLight ? ' bg-light' : '');
+                isLight = !isLight;
+
+                const cardsHtml = products.map(p => 
+                    '<article class="product-card">' +
+                        '<a href="urun-detay.html?id=' + p.id + '">' +
+                            '<img src="' + p.image + '" alt="' + p.title + '" loading="lazy">' +
+                        '</a>' +
+                        '<span class="product-badge">' + p.category + '</span>' +
+                        '<h3><a href="urun-detay.html?id=' + p.id + '">' + p.title + '</a></h3>' +
+                        '<p>' + p.description.substring(0, 120) + '...</p>' +
+                        '<a href="urun-detay.html?id=' + p.id + '" class="btn btn-primary">' +
+                            '<i class="fa-solid fa-arrow-right"></i> Detaylı İncele' +
+                        '</a>' +
+                    '</article>'
+                ).join('');
+
+                section.innerHTML = 
+                    '<div class="container">' +
+                        '<h2 class="category-title">' + catName + '</h2>' +
+                        '<div class="products-grid">' + cardsHtml + '</div>' +
+                    '</div>';
+                
+                container.appendChild(section);
+            }
+
+            // Scroll animations
+            const fadeElements = document.querySelectorAll('.product-card, .category-title');
+            fadeElements.forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+            });
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            fadeElements.forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+</html>
